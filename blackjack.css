@@ -1,0 +1,90 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: #391212;
+    color: #EDDBC2;
+}
+
+button{ 
+    color: #74342B;
+    background-color: #EDDBC2;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#dealer-cards img{
+    height: 175px;
+    width: 125px;
+    margin: 1px;
+}
+
+#your-cards img{
+    height: 175px;
+    width: 125px;
+    margin: 1px;
+}
+
+#hit{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#stay{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#new-game{
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+@media (max-width: 477px) {
+        body{
+            margin-top: 50px;
+        }
+        #dealer-cards img{
+            height: 130px;
+            width: 100px;
+        }
+        #your-cards img{
+            height: 130px;
+            width: 100px;
+        }
+        #new-game{
+            position: absolute;
+            width: 100px; /* Width of the button */
+            height: 40px; /* Height of the button */
+            font-size: 15px; /* Font size of the text inside the button */
+            font-weight: 700;
+            left: 15px;
+        }
+}
+
+@media (min-width:478px)and (max-width: 1025px) {
+    body{
+        margin-top: 70px;
+    }
+    #dealer-cards img{
+        margin: 3px;
+        height: 200px;
+        width: 150px;
+    }
+    
+    #your-cards img{
+        margin: 3px;
+        height: 200px;
+        width: 150px;
+    }
+    
+}
+
