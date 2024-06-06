@@ -71,6 +71,8 @@ function startgame(){
 
     console.log(yoursum);
 
+    updateScores(); // Update scores after initial dealing
+
     document.getElementById("hit").addEventListener("click", hit);
     document.getElementById("stay").addEventListener("click", stay);
     document.getElementById("new-game").addEventListener("click", newgame);
@@ -94,14 +96,17 @@ function hit()
     youracecount+=checkace(card);
     document.getElementById("your-cards").append(cardImg);
 
-    if(recudeace(yoursum,youracecount)>21){
+    updateScores(); // Update scores after each hit
+
+    if(reduceace(yoursum,youracecount)>21){
         canhit=false;
+        stay(); // If player busts, automatically call stay
     }
 }
 
 function stay(){
-    dealersum = recudeace(dealersum,dealeracecount);
-    yoursum = recudeace(yoursum,youracecount);
+    dealersum = reduceace(dealersum,dealeracecount);
+    yoursum = reduceace(yoursum,youracecount);
 
     canhit=false;
     document.getElementById("hidden").src = "./cards/"+hidden+".png";
@@ -131,6 +136,11 @@ function stay(){
     document.getElementById("results").innerText = message;
 }
 
+function updateScores() {
+    document.getElementById("your-sum").innerText = yoursum;
+    document.getElementById("dealer-sum").innerText = dealersum - getvalue(hidden); // Excluding hidden card score
+}
+
 function getvalue(card){
     let data = card.split("-");
     let value = data[0];
@@ -153,7 +163,7 @@ function checkace(card)
     return 0;
 }
 
-function recudeace(playersum, playeracecount){
+function reduceace(playersum, playeracecount){
     while(playersum>21 && playeracecount>0)
     {
         playersum-=10;
@@ -161,4 +171,3 @@ function recudeace(playersum, playeracecount){
     }
     return playersum;
 }
-
