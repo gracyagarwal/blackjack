@@ -5,6 +5,12 @@ body{
     color: #EDDBC2;
 }
 
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 button{ 
     color: #74342B;
     background-color: #EDDBC2;
@@ -39,6 +45,36 @@ button{
     font-size: 20px;
 }
 
+#results{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h1{
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    margin-left: 20px;
+}
+
+.instructions{
+    text-align: left;
+    position: absolute;
+    left: 0;
+    margin-left: 20px;
+}
+
+#a{
+    top:80px;
+}
+#b{
+    top:100px;
+}
+#c{
+    top: 120px;
+}
+
 #new-game{
     width: 150px;
     height: 50px;
@@ -48,10 +84,15 @@ button{
     right: 15px;
 }
 
+.instructionline{
+    display: none;
+}
+
 @media (max-width: 477px) {
         body{
             margin-top: 50px;
         }
+        
         #dealer-cards img{
             height: 130px;
             width: 100px;
@@ -61,18 +102,28 @@ button{
             width: 100px;
         }
         #new-game{
-            position: absolute;
             width: 100px; /* Width of the button */
             height: 40px; /* Height of the button */
             font-size: 15px; /* Font size of the text inside the button */
             font-weight: 700;
-            left: 15px;
+        }
+        h1{
+            top: 0;
+        }
+        .instructions{
+            display: none;
+        }
+        .instructionline{
+            display: inline;
         }
 }
 
 @media (min-width:478px)and (max-width: 1025px) {
     body{
         margin-top: 70px;
+    }
+    h1{
+        text-align: center;
     }
     #dealer-cards img{
         margin: 3px;
@@ -84,6 +135,16 @@ button{
         margin: 3px;
         height: 200px;
         width: 150px;
+    }
+    h1{
+        top: 0;
+        font-size: 36px;
+    }
+    .instructions{
+        display: none;
+    }
+    .instructionline{
+        display: inline;
     }
     
 }
